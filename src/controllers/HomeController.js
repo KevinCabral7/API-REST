@@ -1,8 +1,12 @@
+import User from "../models/User";
+
 class HomeController {
-  index(req, res) {
-    res.json({
-      chegouAqui: true,
+  async index(req, res) {
+    const novoUser = await User.create({
+      name: "Kevin",
+      email: "kevin1tdsb@gmail.com",
     });
+    res.json(novoUser);
   }
 }
 
